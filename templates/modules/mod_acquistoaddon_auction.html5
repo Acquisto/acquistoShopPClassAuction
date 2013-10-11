@@ -1,0 +1,29 @@
+<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+    <?php if($this->headline): ?>
+    <<?=$this->hl;?>><?=$this->headline;?></<?=$this->hl;?>>
+    <?php endif; ?>
+
+    <?php if($this->Abgelaufen): ?>
+    <p>Diese Auktion ist bereits abgelaufen.</p>    
+    <?php else: ?>
+    <p>Das aktuelle Gebot f&uuml;r dieses Produkt liegt bei <?php echo $this->Bidding->max; ?> <?php echo $GLOBALS['TL_CONFIG']['currency_symbol']; ?>. Wenn du auf dieses Produkt ein Gebot abgeben m&ouml;chtest muss dieses mind. <?php echo $this->Bidding->next; ?> <?php echo $GLOBALS['TL_CONFIG']['currency_symbol']; ?> betragen. Derzeit gibt es <?php echo $this->Bidding->count; ?> <?php if($this->Bidding->count >= 2): ?>Gebote<?php else: ?>Gebot<?php endif; ?>.</p>
+    
+    <?php if($this->Login): ?>
+    <div class="form">
+        <form method="POST">
+            <input type="hidden" name="FORM_SUBMIT" value="tl_shop_produkte_bidding">
+            <input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
+            <input type="hidden" name="product_id" value="<?php echo $this->Produkt->id; ?>">
+        
+            <div class="formbody">
+                <label for="ctrl_bidding">Ihr Gebot:</label> <input type="text" name="bidding" id="ctrl_bidding" value="<?php echo $this->Bidding->next; ?>" size="" maxlength=""> <input type="submit" value="Verbindliches Gebot abgeben">
+            </div>
+        </form>
+    </div>
+    <?php else: ?>
+    <p class="error auction_login_failed">Sie m&uuml;ssen zum bieten angemeldet sein!</p>    
+    <?php endif; ?>
+    
+    <p>Die Auktion l&auml;ft bis einschlie&szlig;lich <span class="auction_date"><?php echo $this->Enddatum; ?></span>.</p> 
+    <?php endif; ?>
+</div>
