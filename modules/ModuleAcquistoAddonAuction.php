@@ -20,7 +20,7 @@ class ModuleAcquistoAddonAuction extends \Module
     {
         if (TL_MODE == 'BE')
         {
-            $objTemplate = new BackendTemplate('be_wildcard');
+            $objTemplate = new \BackendTemplate('be_wildcard');
 
             $objTemplate->wildcard = '### ACQUISTO AUKTION ###';
             $objTemplate->title = $this->headline;
