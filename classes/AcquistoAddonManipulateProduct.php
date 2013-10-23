@@ -1,25 +1,8 @@
 <?php
 
-/**
- * Contao Open Source CMS
- *
- * Copyright (c) 2005-2013 Leo Feyer
- *
- * @package Core
- * @link    https://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
- */
+namespace AcquistoShop\Addon;
 
-
-/**
- * Class Messages
- *
- * Add system messages to the welcome screen.
- * @copyright  Leo Feyer 2005-2013
- * @author     Leo Feyer <https://contao.org>
- * @package    Core
- */
-class AcquistoAddonManipulateProduct extends Controller
+class AcquistoAddonManipulateProduct extends \Controller
 {
     public function modifyProduct($Product) {
         if($Product->type == 'auktion') {

@@ -10,6 +10,14 @@
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
+/**
+ * Register the namespaces
+ */
+ 
+ClassLoader::addNamespaces(array
+(
+	'AcquistoShop\Addon',
+)); 
 
 /**
  * Register the classes
@@ -17,10 +25,10 @@
 ClassLoader::addClasses(array
 (
     // ProductClasses
-	'acquistoPClassAuktion'             => 'system/modules/acquistoShopPClassAuktion/modules/product/acquistoPClassAuktion.php',
-	'ModuleAcquistoAddonAuction'        => 'system/modules/acquistoShopPClassAuktion/modules/ModuleAcquistoAddonAuction.php',
-  'ModuleAcquistoAddonMyBiddings'     => 'system/modules/acquistoShopPClassAuktion/modules/ModuleAcquistoAddonMyBiddings.php',  
-  'AcquistoAddonManipulateProduct'    => 'system/modules/acquistoShopPClassAuktion/classes/AcquistoAddonManipulateProduct.php'
+	'AcquistoShop\Product\acquistoPClassAuktion'              => 'system/modules/acquistoShopPClassAuction/modules/product/acquistoPClassAuktion.php',
+	'AcquistoShop\Frontend\ModuleAcquistoAddonAuction'        => 'system/modules/acquistoShopPClassAuction/modules/ModuleAcquistoAddonAuction.php',
+	'AcquistoShop\Frontend\ModuleAcquistoAddonMyBiddings'     => 'system/modules/acquistoShopPClassAuction/modules/ModuleAcquistoAddonMyBiddings.php',  
+  'AcquistoShop\Addon\AcquistoAddonManipulateProduct'       => 'system/modules/acquistoShopPClassAuction/classes/AcquistoAddonManipulateProduct.php'
 ));
 
 

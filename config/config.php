@@ -35,8 +35,8 @@ $GLOBALS['ACQUISTO_PCLASS']['auktion']  = array('acquistoPClassAuktion', 'acquis
  */
 array_insert($GLOBALS['FE_MOD']['acquisto_addons'], 0, array
 (
-    'ModuleAcquistoAddonAuction'             => 'ModuleAcquistoAddonAuction',
-    'ModuleAcquistoAddonMyBiddings'          => 'ModuleAcquistoAddonMyBiddings'
+    'acquisto_auction'             => 'ModuleAcquistoAddonAuction',
+    'acquisto_mybiddings'          => 'ModuleAcquistoAddonMyBiddings'
 ));
 
 $GLOBALS['TL_HOOKS']['modifyProduct'][] = array('AcquistoAddonManipulateProduct', 'modifyProduct');
